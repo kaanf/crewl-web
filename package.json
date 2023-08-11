@@ -1,12 +1,9 @@
 {
-  "homepage": "https://kaanf.github.io/crewl-web/",
   "name": "neu-noise",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "build": "env NO_LINT=true next build",
     "start": "next start",
     "lint": "env NO_LINT=true next lint"

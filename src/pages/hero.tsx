@@ -82,7 +82,7 @@ const Hero = () => {
   return (
     <Fragment>
       <div >
-       <div className="pt-4 md:pt-12 flex justify-center">
+       <div className="pt-12 mt-12 md:pt-12 flex justify-center">
         <Image
           src={logo}
           alt="Monkey"
@@ -94,19 +94,17 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto pb-16 pt-12">
 
         <div className="pt-4 md:pt-12 flex justify-center">
-
           <Link
             href="#"
             onClick={() => setShowModal(true)}
             className="border-2 border-[#222] flex items-center justify-center py-2 px-4 bg-orange-300 group relative"
           >
-            <span className="text-center text-sm font-mono ">
+            <span className="text-center text-lg font-mono">
               <br className="block md:hidden" /> {`Kapalı beta'ya katılmak için ön kayıt ol`}
             </span>
             <div className="absolute bg-[#222] h-full w-[101%] -z-10 top-2.5 left-1 group-hover:translate-x-1 group-hover:translate-y-1 transition duration-200"></div>
           </Link>
         </div>
-
 
         <div className="flex flex-col items-center justify-center text-center pt-6">
           <h2
