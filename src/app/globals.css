@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('/fonts/SpaceGrotesk-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Space Grotesk';
+    src: url('/fonts/SpaceGrotesk-Medium.woff2') format('woff2');
+    font-weight: 500; 
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Space Grotesk';
+    src: url('/fonts/SpaceGrotesk-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Space Grotesk';
+    src: url('/fonts/SpaceGrotesk-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .modal-open {
+    overflow: hidden;
+  }
+
+  
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.neubrutal-shape {
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+.foreground-layer {
+  width: 100%;
+  height: 100%;
+  background-color: #f9ca24;
+  border: 2px solid #000;
+  position: absolute;
+  z-index: 2;
+}
+
+.background-layer {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 1;
+}
