@@ -93,16 +93,16 @@ const Hero = () => {
         </div>
       <div className="max-w-7xl mx-auto pb-16 pt-12">
 
-        <div className="pt-4 md:pt-12 flex justify-center">
+        <div className="pt-4  flex justify-center">
           <Link
             href="#"
             onClick={() => setShowModal(true)}
             className="border-2 border-[#222] flex items-center justify-center py-2 px-4 bg-orange-300 group relative"
           >
-            <span className="text-center text-lg font-mono">
-              <br className="block md:hidden" /> {`Kapalı beta'ya katılmak için ön kayıt ol`}
+            <span className="text-center text-sm md:text-sm font-mono">
+              Discord'a Katıl
             </span>
-            <div className="absolute bg-[#222] h-full w-[101%] -z-10 top-2.5 left-1 group-hover:translate-x-1 group-hover:translate-y-1 transition duration-200"></div>
+            <div className="absolute bg-[#222] h-full w-[101%] -z-10 top-2 md:top-2.5 left-1 md:left-2 group-hover:translate-x-1 group-hover:translate-y-1 transition duration-200"></div>
           </Link>
         </div>
 
