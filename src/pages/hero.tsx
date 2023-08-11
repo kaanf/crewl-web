@@ -21,6 +21,7 @@ const Hero = () => {
   const [name, setName] = useState("");
   const [city, setCity] = useState("");
   const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const userId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
   const [value, setValue] = useState()
 
@@ -44,6 +45,7 @@ const Hero = () => {
       name: "",
       tel: "",
       country: "İzmir",
+      username: "",
       terms: "",
     },
 
@@ -57,9 +59,9 @@ const Hero = () => {
     onSubmit: (values) => {
       console.log("form submitted");
       setShowModal(false)
-      alert("Form Submitted Successfully")
+      alert("Kaydını aldık, bizden haber bekle!")
 
-    writeUserData(userId, name, city, email);
+    writeUserData(userId, name, city, email, username);
       console.log(values);
     },
   });
@@ -82,7 +84,7 @@ const Hero = () => {
   return (
     <Fragment>
       <div >
-       <div className="pt-12 mt-12 md:pt-12 flex justify-center">
+       <div className="pt-12 md:pt-12 flex justify-center">
         <Image
           src={logo}
           alt="Monkey"
@@ -99,10 +101,10 @@ const Hero = () => {
             onClick={() => setShowModal(true)}
             className="border-2 border-[#222] flex items-center justify-center py-2 px-4 bg-orange-300 group relative"
           >
-            <span className="text-center text-lg font-mono">
-              <br className="block md:hidden" /> {`Kapalı beta'ya katılmak için ön kayıt ol`}
+            <span className="text-center text-sm md:text-sm font-mono">
+              Kapalı Beta'ya Katıl
             </span>
-            <div className="absolute bg-[#222] h-full w-[101%] -z-10 top-2.5 left-1 group-hover:translate-x-1 group-hover:translate-y-1 transition duration-200"></div>
+            <div className="absolute bg-[#222] h-full w-[101%] -z-10 top-2 md:top-2.5 left-1 md:left-2 group-hover:translate-x-1 group-hover:translate-y-1 transition duration-200"></div>
           </Link>
         </div>
 
@@ -225,15 +227,12 @@ const Hero = () => {
           <p className="font-semibold text-3xl py-4 text-center">
           Crewl ekibine katılmak için heyecan verici bir fırsat!
           </p>
-          <p className="font-mono text-sm w-1/2 text-center pb-6">
+          <p className="font-mono text-sm  text-center pb-6">
           Bar gezintisi, oyunlar, eğlence ve yeni insanlarla tanışma deneyimini bizimle yaşayarak unutulmaz anılara ortak olabilirsin. Hadi, birlikte büyüyelim ve eğlence dolu bir yolculuğa çıkalım!
           </p>
-          <div className="border-2 border-[#222] flex items-center justify-center py-2 mt-2 px-4 bg-orange-300 relative group cursor-pointer">
-            <span className="text-center text-sm md:text-sm font-mono">
-              Discord'a Katıl
-            </span>
-            <div className="absolute bg-[#222] h-full w-[101%] -z-10 top-2 md:top-2.5 left-1 md:left-2 group-hover:translate-x-1 group-hover:translate-y-1 transition duration-200"></div>
-          </div>
+          <p className="font-semibold text-xl py-4 text-center">
+          iletisim@crewl.app
+          </p>
         </div>
         
 
@@ -313,7 +312,7 @@ const Hero = () => {
               {/* Email input field */}
               <div className="pb-4">
                 <label
-                  htmlFor="phone"
+                  htmlFor="username"
                   className={`block font-latoBold text-sm pb-2 ${
                     formik.touched.tel && formik.errors.tel
                       ? "text-red-400"
@@ -328,10 +327,9 @@ const Hero = () => {
                 <p></p>
                 <input
                   className="border-2 border-gray-500 p-2 rounded-md w-1/2 focus:border-teal-500 focus:ring-teal-500"
-                  type="tel" name="tel" placeholder="@crewlapp (Opsiyonel)" pattern="[0-9]{3} [0-9]{3} [0-9]{4}"
-                  onChange={(e) => setEmail(e.target.value)}
-                  minLength={10}
-                  maxLength={10}
+                  type="text" name="text" placeholder="@crewlapp (Opsiyonel)"
+                  onChange={(e) => setUsername(e.target.value)}
+                  minLength={3}
                 />
               </div>
               
@@ -346,8 +344,12 @@ const Hero = () => {
                 <select
                   className="border-2 border-gray-500 p-2 rounded-md w-1/2 focus:border-teal-500 focus:ring-teal-500"
                   name="country"
+                  onChange={(e) => setCity(e.target.value)}
                 >
                   <option>İzmir</option>
+                  <option>İstanbul</option>
+                  <option>Eskişehir</option>
+                  <option>Ankara</option>
                 </select>
               </div>
               {/* Terms of service*/}
@@ -381,12 +383,22 @@ const Hero = () => {
                   </p>
                 </div>
               </div>
+              <div className="flex justify-end">
+
+              <button
+
+            onClick={() => setShowModal(false)}
+                className="bg-red-400 font-latoBold text-sm text-white py-3 mt-6  mr-2 rounded-lg w-full"
+              >
+                Geri
+              </button>
               <button
                 type="submit"
-                className="bg-teal-500 font-latoBold text-sm text-white py-3 mt-6 rounded-lg w-full"
+                className="bg-teal-500 font-latoBold text-sm text-white py-3 mt-6 ml-2 rounded-lg w-full"
               >
                 Kayıt Ol
               </button>
+    </div>
             </div>
           </div>
           <div className="relative flex-1">

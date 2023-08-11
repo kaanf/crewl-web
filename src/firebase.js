@@ -15,11 +15,12 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-export function writeUserData(userId, name, city, email) {
+export function writeUserData(userId, name, city, phone, username) {
   const db = getDatabase();
   set(ref(db, 'users/' + userId), {
     name: name,
-    city: "İzmir",
-    email : email
+    city: city,
+    phone : phone,
+    username: username
   });
 }
